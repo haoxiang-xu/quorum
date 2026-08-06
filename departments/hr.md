@@ -12,7 +12,7 @@
 
 **任何 charter 都不得复述 Quorum 已有的内容** —— 宪法条款、case lifecycle、角色类型的通用义务（求证义务、论证义务、只读/写入并发规则、庭审发言规则等）一律不写进 charter。
 
-理由：这些内容对每个 agent 都相同，复述一遍等于把信噪比压低。`assessor-signal-ratio` 的第一条测法就是"与已注入内容重复的段落算噪音"，它会在第一轮取证时把这类 charter 判死。
+理由：这些内容对每个 agent 都相同，复述一遍等于把信噪比压低。`dimension-owner-signal-ratio` 的第一条测法就是"与已注入内容重复的段落算噪音"，它会在第一轮取证时把这类 charter 判死。
 
 **charter 只写三样东西**：这个角色独有的对象、已验证的方法、已知的纠错与判例。
 
@@ -22,22 +22,22 @@
 
 ## 1. 对 Quorum 的依赖（待补条款）
 
-本文档的编制引用了 Quorum **尚未定义**的内容。落地前必须先补，否则四位 assessor 引用的角色类型不存在。
+本文档的编制引用了 Quorum **尚未定义**的内容。落地前必须先补，否则四位 Dimension Owner 引用的角色类型不存在。
 
 | # | 待补内容 | 落在 Quorum 的哪一节 | 阻塞什么 |
 |---|---|---|---|
-| D1 | **新增 `Assessor` 角色类型** | Roles | 四位 assessor 全部 |
-| D2 | **传唤机制补「评估对象声明」例外** | 传唤机制 · 第一层 | assessor 的恒定到场 |
-| D3 | **论据准入规则** | Roles · Assessor 节 | 「贡献度不是维度」「便宜不是保留理由」无处安放 |
+| D1 | **新增 `Dimension Owner` 角色类型** | Roles | 四位 Dimension Owner 全部 |
+| D2 | **传唤机制补「评估对象声明」例外** | 传唤机制 · 第一层 | Dimension Owner 的恒定到场 |
+| D3 | **论据准入规则** | Roles · Dimension Owner 节 | 「贡献度不是维度」「便宜不是保留理由」无处安放 |
 | D4 | **`Procedural Judge` 授权清单加「受理裁定」** | Procedural Judge · 授权裁定权 | 立案阶段驳回 |
 | D5 | **`Knowledge Owner` 判例库特殊义务** | Knowledge Owner · 角色职责 | 判例法体系 |
 | D6 | **合成倾向 + 红队段的产出者** | 未定 | Chief Judge 的注意力负担 |
 
-### D1 `Assessor` 角色类型 — 要写进 Quorum 的内容
+### D1 `Dimension Owner` 角色类型 — 要写进 Quorum 的内容
 
 与 `Expert` 的分野（三条实质差异，非措辞差异）：
 
-| | `Expert` | `Assessor` |
+| | `Expert` | `Dimension Owner` |
 |---|---|---|
 | 拥有什么 | 一个**领域**（知识边界） | 一把**尺子**（测量方法） |
 | 记忆核心 | 知识体系、判断准则、鉴定先例 | 可复现的测量路径、记账纠错 |
@@ -45,27 +45,27 @@
 | 越维时 | 有主动指出高风险的义务，**不得沉默** | 有不越维的禁令，越维看法标注为参考**不计入** |
 | 相互关系 | 领域可重叠，无约束 | 必须**正交且穷尽** |
 
-`Assessor` 角色定义需含的四条新规则：
+`Dimension Owner` 角色定义需含的四条新规则：
 
 1. **正交性约束**（新设一把尺子的准入）：必须先证明它不是现有某把尺子的变体或子集。
 2. **方向性声明**：每把尺子必须声明它能往哪个方向支撑结论。单向的尺子不得反向使用。
 3. **测法沉淀义务**：沉淀的是验证有效 2+ 次的**测量路径**，不是结论。结论进判例库。
 4. **评估对象声明**（边界形式）：声明"我评估哪一类对象"，命中即全员到场，不做内容筛选。
 
-命名规则：`assessor` + 维度名称。不用 `-owner` 后缀 —— Quorum 里 `Owner` 已被"拥有某个实体"占据，Assessor 不拥有实体。
+命名规则：`dimension-owner` + 维度名称。不用 `-owner` 后缀 —— Quorum 里 `Owner` 已被"拥有某个实体"占据，Dimension Owner 不拥有实体。
 
 ### D3 论据准入规则 — 要写进 Quorum 的内容
 
-两条来自既往判例，都是关于 Assessor 的元规则：
+两条来自既往判例，都是关于 Dimension Owner 的元规则：
 
 - **禁止设立某把尺子**：一把从不命中的尺子量的是不存在的维度。实证：旧效率镜头四轮全量取证零猎物，23 agent 无一达裁撤门槛，所有低活动均由设计意图或工作面周期解释。（判例 P-4，"贡献度不是维度"）
 - **单向尺子不得反向使用**：成本尺只支撑"拆/减载"，不支撑"保留"。"便宜到留着无妨"对任何闲置对象恒真，无判别力。（判例 P-5）
 
 ### D6 未决
 
-Quorum 里 `Speaker of the House` 只中立汇总、不拥有记忆、不给倾向；`Expert`/`Assessor` 只在各自维度内结论。**没有任何角色产出"我倾向批/驳，且这么改最可能错在哪"**。
+Quorum 里 `Speaker of the House` 只中立汇总、不拥有记忆、不给倾向；`Expert`/`Dimension Owner` 只在各自维度内结论。**没有任何角色产出"我倾向批/驳，且这么改最可能错在哪"**。
 
-后果：`Chief Judge` 每个 case 要自己读完全部 Assessor 意见 + Evidence Examiner 报告。原体系中判决建议书那一层缓冲，在此不存在。
+后果：`Chief Judge` 每个 case 要自己读完全部 Dimension Owner 意见 + Evidence Examiner 报告。原体系中判决建议书那一层缓冲，在此不存在。
 
 三条路（未选）：接受 Chief Judge 直读全部产出／给 `Speaker of the House` 加"合成 + 红队"职责（会改变它的中立性质）／在 court 新增一个合成角色（等于把原体系的法官请回来）。
 
@@ -75,7 +75,7 @@ Quorum 里 `Speaker of the House` 只中立汇总、不拥有记忆、不给倾�
 
 ```
 departments/
-├── court/                              # 全 team 共用，不属 HR
+├── court/                                         # 全 team 共用，不属 HR
 │   └── agents/
 │       ├── speaker-of-the-house
 │       ├── procedural-judge
@@ -83,13 +83,13 @@ departments/
 │       └── acceptance-inspector
 └── hr/
     ├── agents/
-    │   ├── assessor-context-cleanliness    # 只读
-    │   ├── assessor-signal-ratio           # 只读
-    │   ├── assessor-boundary-quality       # 只读
-    │   ├── assessor-process-cost           # 只读
-    │   ├── knowledge-owner-org-chart       # 写入串行
-    │   └── task-owner-org-change           # 写入串行
-    └── skills/                             # 现状实测 + 机械执行动作
+    │   ├── dimension-owner-context-cleanliness    # 只读
+    │   ├── dimension-owner-signal-ratio           # 只读
+    │   ├── dimension-owner-boundary-quality       # 只读
+    │   ├── dimension-owner-process-cost           # 只读
+    │   ├── knowledge-owner-org-chart              # 写入串行
+    │   └── task-owner-org-change                  # 写入串行
+    └── skills/                                    # 现状实测 + 机械执行动作
 ```
 
 `Chief Judge` = 本人，全 team 唯一，不属任何 department。
@@ -98,15 +98,15 @@ departments/
 
 | 角色 | 参与方式 | 边界声明 |
 |---|---|---|
-| 四位 `Assessor` | **只读**，多 instance 并行 | 评估对象 = `组织建制变更议案` |
+| 四位 `Dimension Owner` | **只读**，多 instance 并行 | 评估对象 = `组织建制变更议案` |
 | `knowledge-owner-org-chart` | 写入串行 | 知识库路径 = `departments/hr/knowledge/org-chart.md`, `departments/hr/knowledge/precedents.md` |
 | `task-owner-org-change` | 写入串行 | task 名称 = `org-change-execution` |
 
 **本 department 的读写规则**（取代原体系的「HR 不碰任何文件」）：
 
-> 评估与执行由不同角色类型承担。`Assessor` 恒为只读参与，不得执行任何组织变更；执行由 `Task Owner` 承担，其本身不持有任何评估维度。
+> 评估与执行由不同角色类型承担。`Dimension Owner` 恒为只读参与，不得执行任何组织变更；执行由 `Task Owner` 承担，其本身不持有任何评估维度。
 
-这比"HR advisory only"更精确 —— 原规则防的是"评估者兼执行者自己给自己发权力"，而角色类型系统已在结构上分离了读写（Assessor 只读是**角色定义**，不是纪律要求）。同 department 不构成问题：Quorum 明确 department 不进入庭审，不存在 department 立场。
+这比"HR advisory only"更精确 —— 原规则防的是"评估者兼执行者自己给自己发权力"，而角色类型系统已在结构上分离了读写（Dimension Owner 只读是**角色定义**，不是纪律要求）。同 department 不构成问题：Quorum 明确 department 不进入庭审，不存在 department 立场。
 
 ### 两条写入边界的双侧声明
 
@@ -123,13 +123,13 @@ departments/
 
 ---
 
-### 3.1 `assessor-context-cleanliness`
+### 3.1 `dimension-owner-context-cleanliness`
 
 ```markdown
 ---
-name: "assessor-context-cleanliness"
-description: "Assessor for the context-cleanliness dimension. Measures whether a proposed org change makes per-call context smaller and cleaner: per-call payload accounting, isolation gains, co-change cohesion, and write-serialization contention. Never fabricates token numbers."
-role_type: Assessor
+name: "dimension-owner-context-cleanliness"
+description: "Dimension Owner of context cleanliness. Measures whether a proposed org change makes per-call context smaller and cleaner: per-call payload accounting, isolation gains, co-change cohesion, and write-serialization contention. Never fabricates token numbers."
+role_type: Dimension Owner
 boundary: { type: assessment_target, value: "组织建制变更议案" }
 model: opus
 memory: project
@@ -174,9 +174,9 @@ memory: project
 
 ## 不是你的
 
-- charter 内部的**有效信息占比** → `assessor-signal-ratio` (你量"载荷多大", 它量"载荷里多少是有用的")。
-- 边界声明的质量 → `assessor-boundary-quality`。
-- 流程轮次成本 → `assessor-process-cost` (你量常驻的编制成本, 它量 per-case 的流程成本)。
+- charter 内部的**有效信息占比** → `dimension-owner-signal-ratio` (你量"载荷多大", 它量"载荷里多少是有用的")。
+- 边界声明的质量 → `dimension-owner-boundary-quality`。
+- 流程轮次成本 → `dimension-owner-process-cost` (你量常驻的编制成本, 它量 per-case 的流程成本)。
 
 ## Memory
 
@@ -186,13 +186,13 @@ memory: project
 
 ---
 
-### 3.2 `assessor-signal-ratio`
+### 3.2 `dimension-owner-signal-ratio`
 
 ```markdown
 ---
-name: "assessor-signal-ratio"
-description: "Assessor for the signal-ratio dimension. Measures what fraction of an agent's charter is relevant when it wakes up: signal-to-noise ratio, boilerplate share, wake-up relevance, memory-index focus."
-role_type: Assessor
+name: "dimension-owner-signal-ratio"
+description: "Dimension Owner of signal ratio. Measures what fraction of an agent's charter is relevant when it wakes up: signal-to-noise ratio, boilerplate share, wake-up relevance, memory-index focus."
+role_type: Dimension Owner
 boundary: { type: assessment_target, value: "组织建制变更议案" }
 model: opus
 memory: project
@@ -235,8 +235,8 @@ memory: project
 
 ## 不是你的
 
-- 载荷总量 → `assessor-context-cleanliness` (你量"载荷里多少有用", 它量"载荷多大")。
-- 边界声明质量 → `assessor-boundary-quality`。
+- 载荷总量 → `dimension-owner-context-cleanliness` (你量"载荷里多少有用", 它量"载荷多大")。
+- 边界声明质量 → `dimension-owner-boundary-quality`。
 - 修 charter 本身 → 你发现噪音并出处方, 执行归 `task-owner-org-change`。
 
 ## Memory
@@ -247,13 +247,13 @@ memory: project
 
 ---
 
-### 3.3 `assessor-boundary-quality`
+### 3.3 `dimension-owner-boundary-quality`
 
 ```markdown
 ---
-name: "assessor-boundary-quality"
-description: "Assessor for the boundary-quality dimension. The summoning mechanism rests entirely on ownership boundary declarations; this assessor measures whether they hold: machine-decidability, coverage completeness, trigger-condition overlap, and boundary self-healing signals."
-role_type: Assessor
+name: "dimension-owner-boundary-quality"
+description: "Dimension Owner of boundary quality. The summoning mechanism rests entirely on ownership boundary declarations; this owner measures whether they hold: machine-decidability, coverage completeness, trigger-condition overlap, and boundary self-healing signals."
+role_type: Dimension Owner
 boundary: { type: assessment_target, value: "组织建制变更议案" }
 model: opus
 memory: project
@@ -306,9 +306,9 @@ memory: project
 
 ## 不是你的
 
-- 载荷与内聚 → `assessor-context-cleanliness`。
-- charter 正文的信噪比 → `assessor-signal-ratio` (你只看边界声明这一个字段)。
-- 传唤**规模**与流程轮次 → `assessor-process-cost` (你量边界准不准, 它量传唤贵不贵)。
+- 载荷与内聚 → `dimension-owner-context-cleanliness`。
+- charter 正文的信噪比 → `dimension-owner-signal-ratio` (你只看边界声明这一个字段)。
+- 传唤**规模**与流程轮次 → `dimension-owner-process-cost` (你量边界准不准, 它量传唤贵不贵)。
 
 ## Memory
 
@@ -319,13 +319,13 @@ memory: project
 
 ---
 
-### 3.4 `assessor-process-cost`
+### 3.4 `dimension-owner-process-cost`
 
 ```markdown
 ---
-name: "assessor-process-cost"
-description: "Assessor for the process-cost dimension. Measures the per-case cost of the case lifecycle itself: hearing rounds, summon scale, track-admission calibration, and blocking duration. The only dimension that measures flow cost rather than headcount cost."
-role_type: Assessor
+name: "dimension-owner-process-cost"
+description: "Dimension Owner of process cost. Measures the per-case cost of the case lifecycle itself: hearing rounds, summon scale, track-admission calibration, and blocking duration. The only dimension that measures flow cost rather than headcount cost."
+role_type: Dimension Owner
 boundary: { type: assessment_target, value: "组织建制变更议案" }
 model: opus
 memory: project
@@ -351,7 +351,7 @@ Quorum 用 Track 分档**控制**流程成本, 但没有任何角色**测量**�
 
 3. **传唤规模**
    每次庭审的必到名单大小 + 第二/三层补捞人数。
-   - **补捞率高** → 第一层匹配不准, 转 `assessor-boundary-quality`, 不由你下结论;
+   - **补捞率高** → 第一层匹配不准, 转 `dimension-owner-boundary-quality`, 不由你下结论;
    - **必到名单过大** → 传唤条件写宽, 这是你的账。
 
 4. **阻塞时长**
@@ -374,9 +374,9 @@ Quorum 用 Track 分档**控制**流程成本, 但没有任何角色**测量**�
 
 ## 不是你的
 
-- 编制的常驻成本 → `assessor-context-cleanliness` (它量常驻, 你量 per-case)。
-- 边界准不准 → `assessor-boundary-quality` (它量边界质量, 你量传唤规模)。
-- 判决书内容的好坏 → 不是任何 Assessor 的账。
+- 编制的常驻成本 → `dimension-owner-context-cleanliness` (它量常驻, 你量 per-case)。
+- 边界准不准 → `dimension-owner-boundary-quality` (它量边界质量, 你量传唤规模)。
+- 判决书内容的好坏 → 不是任何 Dimension Owner 的账。
 
 ## Memory
 
@@ -474,7 +474,7 @@ memory: project
 
 **不写**: 宪法条款、case lifecycle、角色类型的通用义务。这些内容对每个 agent 都相同, 复述一遍等于把信噪比压低 —— 一个 charter 若全是别处已有的内容, 它的信噪比是 0, 这样的角色不该出生。
 
-这条不是风格偏好, 是可被 `assessor-signal-ratio` 直接取证判死的硬约束。
+这条不是风格偏好, 是可被 `dimension-owner-signal-ratio` 直接取证判死的硬约束。
 
 ## 执行策略 (已验证, 违反即返工)
 
@@ -529,10 +529,10 @@ memory: project
 | context / signal 两维度 | **原样保留** | 角色一样 per-call 载入 charter 与 memory 索引, 一样会有样板。一条测法不废 |
 | 流程成本维度 | **新建** | Quorum 把成本从编制移到流程; Track 分档是**控制**手段, 但无**测量**手段。四把旧尺子全部量编制成本, 无一量 per-case 成本 |
 | 程序法 S1–S4 是否设 Expert | **否** | 写死的规则不需要持有者。若其 charter 是 Quorum 的副本, 信噪比为 0, 首轮取证即判死。规则归 Quorum (source of truth), 执行归 `Procedural Judge` 的受理裁定 (待补条款 D4) |
-| 受理关查什么 | **只查形式要件** | 原设计的 S2 (内聚) 依赖 co-change 证据, 而该证据由 assessor 在庭审中产出 —— 受理关无法在开庭前判 S2。**这是原设计中一条自相矛盾的规则**, 拆开后才显形。形式要件 (动机声明、双侧条款交付、继承图) 在受理关查; 需要实测证据的判据 (S1 热度、S2 内聚、S4 扣样板后体积、合并逆命题) 留庭审 |
+| 受理关查什么 | **只查形式要件** | 原设计的 S2 (内聚) 依赖 co-change 证据, 而该证据由 Dimension Owner 在庭审中产出 —— 受理关无法在开庭前判 S2。**这是原设计中一条自相矛盾的规则**, 拆开后才显形。形式要件 (动机声明、双侧条款交付、继承图) 在受理关查; 需要实测证据的判据 (S1 热度、S2 内聚、S4 扣样板后体积、合并逆命题) 留庭审 |
 | 执行者设不设 agent | **设, 为 `Task Owner`** | 两条论据: (一) 验收庭审要求"agent team 作为被告辩护", 执行者若不是 agent 则被告席为空, 第 8 步走不起来; (二) charter 改写有实质裁量 (目标形态、变体识别) 且会积累经验。**不违反"执行是 skill 不是 agent"** —— 该判例的原文是"不需要判断与 memory 的职能做成 skill", 而本 task 两者都需要; 它判死的是庭审程序的机械执行, 那部分仍是 skill |
 | 执行者是否需要新角色类型 | **否** | `Task Owner` 逐条覆盖: 非代码任务、task 名称边界、action 执行责任、写入串行、memory 记执行历史与难题解决方案 |
-| HR 是否仍 advisory-only | **重述, 不保留原文** | 原规则防的是"评估者兼执行者"; 角色类型系统已在结构上分离读写 (Assessor 只读是角色定义)。新表述见 §2 |
+| HR 是否仍 advisory-only | **重述, 不保留原文** | 原规则防的是"评估者兼执行者"; 角色类型系统已在结构上分离读写 (Dimension Owner 只读是角色定义)。新表述见 §2 |
 | 附带收益 | 写入串行自动禁止并发改建制 | 两个 org change 同时落地是灾难, 现由角色定义兜住, 不需额外规则 |
 
 ---
@@ -546,12 +546,12 @@ memory: project
 | 法官 | **整个消失**, 职能散入四处: 质证 → `Evidence Examiner` (court) · 主持/传唤/归档 → `Speaker of the House` (court) · 受理关 → `Procedural Judge` 的受理裁定 (court) · org-chart 与判例库 → `knowledge-owner-org-chart` (HR) |
 | 法官的**合成倾向 + 红队段** | **无人接** —— 见待补条款 D6 |
 | 沟通效率评估官 | 退役 |
-| context 纯净度评估官 | → `assessor-context-cleanliness`, 加"写入串行并发" |
-| 有效信息比例评估官 | → `assessor-signal-ratio`, 加"与 Quorum 重复"这一噪音形态 |
-| 路由成本评估官 | → `assessor-boundary-quality`, 换尺子 |
-| — | → `assessor-process-cost` (新建) |
+| context 纯净度评估官 | → `dimension-owner-context-cleanliness`, 加"写入串行并发" |
+| 有效信息比例评估官 | → `dimension-owner-signal-ratio`, 加"与 Quorum 重复"这一噪音形态 |
+| 路由成本评估官 | → `dimension-owner-boundary-quality`, 换尺子 |
+| — | → `dimension-owner-process-cost` (新建) |
 | 主 Claude 的执行官职责 | → `task-owner-org-change` |
 
-**最大的结构收益**: "法官不代产证据"这条戒律在本设计下**结构性消失** —— 验证者 (`Evidence Examiner`) 与产证据者 (`Assessor`) 本来就是两个 agent, 物理上不可能重演旧体系中"法官代做维度判断、错误沉入真相源污染下游"的事故。
+**最大的结构收益**: "法官不代产证据"这条戒律在本设计下**结构性消失** —— 验证者 (`Evidence Examiner`) 与产证据者 (`Dimension Owner`) 本来就是两个 agent, 物理上不可能重演旧体系中"法官代做维度判断、错误沉入真相源污染下游"的事故。
 
-**最大的结构代价**: D6。判决建议书这层缓冲没有了, `Chief Judge` 每个 case 要自己读完全部 Assessor 意见与 `Evidence Examiner` 报告。
+**最大的结构代价**: D6。判决建议书这层缓冲没有了, `Chief Judge` 每个 case 要自己读完全部 Dimension Owner 意见与 `Evidence Examiner` 报告。
