@@ -21,3 +21,4 @@ archive 是组织全部沉淀数据的 **唯一总库**，对应一个 `archive/
 
 - 法典特区:
     - `archive/codex/` 为法典库，归 `Codex` 所有 (见 [Roles · `Codex`](roles/codex.md))；其入库纪律由 `Codex` 角色职责规定，不适用默认收纳规则
+    - 法典与项目子树的收录分野: 法典只收 **跨项目复用** 的结论、方法论与判例；**单一项目内部的业务/技术知识** 归该项目的 `Knowledge Owner` 子树，不入法典 (详见 [Roles · `Codex`](roles/codex.md) 准入边界)
