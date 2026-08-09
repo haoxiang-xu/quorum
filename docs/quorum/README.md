@@ -11,9 +11,11 @@ Quorum 的唯一规范性宪章来源是 `docs/quorum/` 下的文档集合；本
 
 1. [Constitution 宪法](constitution.md)
 2. [Case Lifecycle 议案生命周期](lifecycle/README.md)
+   - [Track 分档与不立案门](lifecycle/tracks.md)
    - [庭审发言协议](lifecycle/speech-protocol.md)
+   - [全 Track 共通收敛规则](lifecycle/decision-controls.md)
    - [证据规则](lifecycle/evidence-rules.md)
-   - [Track 分档](lifecycle/tracks.md)
+   - [Debate 辩论庭](lifecycle/debate-court.md)
    - [传唤机制](lifecycle/summons.md)
    - [Side Case 分叉](lifecycle/side-cases.md)
 3. [Roles 角色](roles/README.md)
