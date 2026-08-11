@@ -8,7 +8,7 @@ department 是对 agent 进行分类管理的 **组织单位**，服务于 `Chie
     - 一个 department 对应一个 **folder**，folder 名即 department 名
     - 每个 agent 必须属于 且只属于 一个 department
     - department 可以拥有自己的 **agents**，也可以拥有自己的 **skills**
-    - department 的 创建，合并，拆分，删除，由 `Chief Judge` 直接决定，属于组织管理行为，不进入 case lifecycle
+    - department 的 创建、合并、拆分、删除属于持久组织变更，必须由 proposal 说明 agent/skill 迁移、回滚与验收，并经 `Chief Judge` 批准；纯议案只能判断是否应变更，不能直接执行
 
 - skill 规则:
     - department 的 skills，对该 department 内的所有 agent 可用
