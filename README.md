@@ -28,6 +28,8 @@
 
 **方案先于 action。** 任何真实 action 都必须由 Chief Judge 批准一份带验收标准的方案。默认协作可以很轻，但方案本身不能缺失。
 
+**接缝是一等方案对象。** 跨 owner、进程、provider、持久化或版本边界的义务写成 `BC-###`；依赖历史状态的行为写成 `SEQ-###`。两者进入方案、交棒、审查与验收，不靠某个 agent 恰好记得。
+
 **相关性先于完整性。** Speaker 只保留会改变当前结论、方案、owner 分工、验收、回滚或裁定的内容。真实但无关、重复或范围外的材料不会扩大参与名单或庭审。
 
 **证据程序只在需要时启动。** 默认协作不制造 BOS、DES、Examiner 或空报告；正式庭审、Chief 明示的裁定前核验或 material 验收证据才冻结最小决策证据集，并在适用时执行一次 16% 随机抽查。
@@ -36,4 +38,16 @@
 
 ## 状态
 
-设计阶段。规范采用“议案/方案 × 协作/辩论庭/众议庭”的正交模型，运行时与 department 尚未落地。
+设计阶段。规范采用“议案/方案 × 协作/辩论庭/众议庭”的正交模型，运行时与 department 尚未落地；仓库提供无外部依赖的 reference conformance linter，但它不构成运行时或新的规范来源。
+
+## Reference conformance linter
+
+`tools/quorum_lint` 对 canonical `case.md / proposal.md / record.md / ruling.md / acceptance.md` 做 boundary protocol v1 的结构与引用检查。它不生成持久 manifest，不验证业务事实，也不能替代真实测试证据。
+
+```bash
+python3 -B -m tools.quorum_lint path/to/case --phase ruling
+python3 -B -m tools.quorum_lint path/to/case --phase acceptance
+python3 -B -m unittest discover -s tests -v
+```
+
+`ruling` 从 `case.md` frontmatter 读取 canonical protocol，并交叉检查 latest PS、contract set、BC/SEQ refs；随后检查 ID/key/field 唯一性、精确同案 refs、公共事件信封、applicability、`contract_set`/stateful 声明、AC 引用、material 串行 HS 与全部合法 terminal、64-hex SHA-256 revision pair、PS boundary/content hash、canonical RS electorate/N/deadlines/content hash、owner stance/显式 successor inheritance、有限 objection 与 disposition 路由。若存在 ACTION ruling，还重算 `PENDING_CLOSURE` bundle/commit hashes并要求唯一 canonical commit。`acceptance` 只从已经 closure commit 生效的 latest `PLAN_RULING` 读取 effective PS/AC/expected revisions，只读取当前最新且时间在 commit 后的 AT，并要求 actual revisions 有外部证据、每个获准 AC 有具体方法、绑定该 AC 的 canonical E 和 `PASS`，同时核对 case status 因果。linter 不决定某个未标记 case 是否早于采用方的 effective-from，也不会自动豁免 legacy；调用方必须在进入本 v1 blocking gate 前以自己的冻结 effective-from/legacy 清单完成路由，非 v1 输入会失败。linter 只验证记录的结构与精确值关系，不证明 owner 判断、revision 内容或测试结论真实。

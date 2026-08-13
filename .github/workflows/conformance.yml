@@ -1,0 +1,25 @@
+name: Quorum conformance
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  boundary-protocol-v1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run reference linter tests
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+        run: python -B -m unittest discover -s tests -v
+      - name: Validate the canonical conformance fixture
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+        run: python -B -m tools.quorum_lint tests/fixtures/valid-case --phase acceptance

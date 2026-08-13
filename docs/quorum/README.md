@@ -14,6 +14,7 @@ Quorum 的唯一规范性宪章来源是 `docs/quorum/` 下的文档集合；本
    - [讨论模型与最小主 owner 原则](lifecycle/discussion-model.md)
    - [庭审发言协议](lifecycle/speech-protocol.md)
    - [收敛与裁定控制](lifecycle/decision-controls.md)
+   - [边界契约与状态序列](lifecycle/boundary-contracts.md)
    - [证据规则](lifecycle/evidence-rules.md)
    - [Debate 辩论庭](lifecycle/debate-court.md)
    - [Full 众议庭](lifecycle/full-court.md)
